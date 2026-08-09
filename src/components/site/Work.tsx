@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { Reveal } from "./Reveal";
+import { ProtectedImage } from "./ImageProtection";
 import { categories, niches, works } from "@/data/works";
 
 export function Work() {
@@ -85,12 +86,9 @@ export function Work() {
             <Reveal key={w.id} delay={(i % 3) * 80}>
               <article className="hover-lift group h-full overflow-hidden rounded-3xl border border-border bg-card">
                 <div className="relative aspect-[4/5] overflow-hidden">
-                  <img
+                  <ProtectedImage
                     src={w.image}
                     alt={`${w.title} for ${w.client} — ${w.niche}`}
-                    width={912}
-                    height={1104}
-                    loading="lazy"
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <span className="absolute left-4 top-4 rounded-full bg-card/90 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-ink backdrop-blur">
@@ -99,7 +97,6 @@ export function Work() {
                 </div>
                 <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-3 p-5">
                   <div className="min-w-0">
-                    <h3 className="truncate text-sm font-bold text-ink">{w.client}</h3>
                     <p className="truncate text-xs text-muted-foreground">{w.niche}</p>
                   </div>
                   <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-secondary text-primary transition-colors group-hover:bg-gradient-primary group-hover:text-primary-foreground">
