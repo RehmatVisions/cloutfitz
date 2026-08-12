@@ -1,4 +1,5 @@
 import { ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
+import { FOOTER, BRAND } from "@/data/content";
 import { Logo } from "./Logo";
 import { Reveal } from "./Reveal";
 
@@ -13,7 +14,7 @@ export function Footer() {
           <div className="grid gap-8 lg:grid-cols-[1.1fr_auto] lg:items-center">
             <div className="min-w-0">
               <h2 className="max-w-xl text-3xl font-extrabold leading-tight sm:text-4xl lg:text-5xl">
-                Ready to make your restaurant look world-class?
+                {FOOTER.cta}
               </h2>
               <p className="mt-4 max-w-lg text-sm leading-relaxed text-primary-foreground/85 sm:text-base">
                 Send us your brief today — first concept lands within 48 hours.
@@ -35,8 +36,7 @@ export function Footer() {
           <div className="min-w-0">
             <Logo />
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-muted-foreground">
-              A restaurant-first design studio. Menus, branding, print, social and websites
-              for hospitality brands worldwide.
+              {FOOTER.tagline}
             </p>
           </div>
 
@@ -95,8 +95,8 @@ export function Footer() {
         </div>
 
         <div className="mt-10 flex flex-col gap-2 border-t border-border pt-6 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
-          <p>© {new Date().getFullYear()} Vezelai Designs. All rights reserved.</p>
-          <p>Designed for restaurants, everywhere.</p>
+          <p>© {new Date().getFullYear()} {BRAND.name}. All rights reserved.</p>
+          <p>{FOOTER.credit}</p>
         </div>
       </div>
     </footer>

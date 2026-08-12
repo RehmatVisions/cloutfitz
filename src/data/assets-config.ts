@@ -40,9 +40,7 @@ export const categoryImages: Record<string, string> = {
  * Yaha se main filter row create hoti hai
  */
 export const niches = [
-  "Restaurants",
-  "Cafés",
-  "Bakery & Desserts",
+  "Clothing Brand",
 ] as const;
 
 /**
@@ -68,7 +66,5 @@ export const categories = [
  * 3. System automatically har category ke liye client assign karega
  */
 export const clients: Record<string, string[]> = {
-  Restaurants: ["Al Mandi House", "Rosso Kitchen", "Ryoku Dubai", "Spice Haus", "Flavour Junction", "Kebab Corner", "Pizza Haven", "Biryani House", "Grill Master", "Table Talk", "Curry King"],
-  Cafés: ["Brew Lane", "Cafe Noor", "Third Cup", "The Daily Grind", "Espresso Corner", "Coffee Bean", "Chai House", "Artisan Brew", "The Blend"],
-  "Bakery & Desserts": ["Maison Sucre", "Knead", "Dolce Bake", "Sweet Dreams", "Sugar Rush", "Bread & Joy", "Cake Dreams", "Pastry Paradise"],
+  "Clothing Brand": ["Fashion House", "Urban Wear", "Style Studio", "Trend Boutique", "Modern Threads", "Premium Collection", "Elite Fashion", "Couture"],
 };

@@ -77,18 +77,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Vezelai Designs — Restaurant Design Agency" },
+      { title: "CloudFitz — Premium Apparel Design Services" },
       {
         name: "description",
         content:
-          "Restaurant-first design studio: menus, logos, flyers, social posts, packaging and websites.",
+          "Premium T-shirt, hoodie, sweater, jersey, and apparel designs for clothing brands. Monthly recurring design support without hiring in-house designers.",
       },
-      { name: "author", content: "Vezelai Designs" },
-      { property: "og:title", content: "Vezelai Designs — Restaurant Design Agency" },
+      { name: "author", content: "CloudFitz" },
+      { property: "og:title", content: "CloudFitz — Premium Apparel Design Services" },
       {
         property: "og:description",
         content:
-          "Restaurant-first design studio: menus, logos, flyers, social posts, packaging and websites.",
+          "Premium T-shirt, hoodie, sweater, jersey, and apparel designs for clothing brands. Monthly recurring design support without hiring in-house designers.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -104,7 +104,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@600;700;800&display=swap",
       },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
     ],
   }),
 

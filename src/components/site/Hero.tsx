@@ -1,131 +1,548 @@
-import { ArrowUpRight, Star } from "lucide-react";
-import menu from "@/assets/work-menu.jpg";
-import post from "@/assets/work-post.jpg";
-import card from "@/assets/work-card.jpg";
+import { ArrowUpRight, Menu, X } from "lucide-react";
+import { useState } from "react";
+import { Logo } from "./Logo";
+import heroBackground from "../../assets/hero/herobackrond.png";
+
+const links = [
+  { label: "Services", href: "#services" },
+  { label: "Our Designs", href: "#work" },
+  { label: "Process", href: "#process" },
+  { label: "Reviews", href: "#testimonials" },
+];
 
 export function Hero() {
+  const [open, setOpen] = useState(false);
+
   return (
-    <section id="top" className="relative overflow-hidden px-3 pt-28 sm:px-6 sm:pt-36">
+    <section
+      id="top"
+      className="
+        relative isolate
+        h-[100svh] min-h-[620px]
+        w-full overflow-hidden
+        bg-white
+      "
+    >
+      {/* =========================================================
+          BACKGROUND IMAGE
+      ========================================================= */}
+      <img
+        src={heroBackground}
+        alt="CLOUTFITZ apparel design studio"
+        className="
+          absolute inset-0 -z-20
+          h-full w-full
+          object-cover
+          object-center
+        "
+      />
+
+      {/* Very subtle readability layer */}
       <div
         aria-hidden
-        className="pointer-events-none absolute -right-24 -top-24 h-[420px] w-[420px] rounded-full bg-gradient-primary opacity-20 blur-3xl"
+        className="
+          pointer-events-none
+          absolute inset-0 -z-10
+          bg-gradient-to-r
+          from-white/20
+          via-transparent
+          to-transparent
+        "
       />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -left-32 top-64 h-[360px] w-[360px] rounded-full bg-accent opacity-60 blur-3xl"
-      />
 
-      <div className="mx-auto max-w-6xl rounded-[2.5rem] border border-border bg-card/70 px-5 py-12 shadow-soft backdrop-blur-sm sm:px-10 sm:py-16 lg:px-14 lg:py-20">
-        <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
-          <div className="min-w-0">
-            <span className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
-              <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-              Design studio for restaurants
-            </span>
+      {/* =========================================================
+          NAVBAR
+          NOT FIXED — PART OF HERO
+      ========================================================= */}
+      <header
+        className="
+          absolute left-0 right-0 top-0 z-40
+          px-5 pt-4
+          sm:px-8 sm:pt-5
+          lg:px-10
+        "
+      >
+        <nav
+          className="
+            mx-auto
+            flex
+            h-[58px]
+            w-full
+            max-w-[1380px]
+            items-center
+            justify-between
+          "
+        >
+          {/* Logo */}
+          <a
+            href="#top"
+            className="
+              relative z-50
+              flex shrink-0
+              items-center
+            "
+          >
+            <Logo />
+          </a>
 
-            <h1 className="mt-6 text-4xl font-extrabold leading-[1.05] text-ink sm:text-5xl lg:text-6xl">
-              <span className="text-gradient-primary">Designs</span> that make
-              <br className="hidden sm:block" /> restaurants unforgettable
-            </h1>
-
-            <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground">
-              Vezelai Designs crafts menus, logos, flyers, social posts, packaging and
-              websites for restaurants across Dubai and beyond — pixel perfect, on brand,
-              delivered fast.
-            </p>
-
-            <div className="mt-8 flex flex-wrap items-center gap-3">
+          {/* Desktop navigation */}
+          <div className="hidden items-center gap-8 lg:flex">
+            {links.map((link) => (
               <a
-                href="#contact"
-                className="group inline-flex items-center gap-2 rounded-full bg-gradient-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground shadow-glow transition-transform hover:scale-[1.04]"
+                key={link.href}
+                href={link.href}
+                className="
+                  text-[14px]
+                  font-medium
+                  text-black/80
+                  transition-colors
+                  duration-200
+                  hover:text-black
+                "
               >
-                Start your project
-                <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                {link.label}
               </a>
-              <a
-                href="#work"
-                className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-7 py-3.5 text-sm font-semibold text-ink transition-colors hover:border-primary hover:text-primary"
-              >
-                View our work
-              </a>
-            </div>
-
-            <dl className="mt-10 grid max-w-lg grid-cols-3 gap-4">
-              {[
-                ["480+", "Projects delivered"],
-                ["120+", "Dubai clients"],
-                ["10", "Niches covered"],
-              ].map(([value, label]) => (
-                <div key={label} className="min-w-0">
-                  <dt className="font-display text-2xl font-bold text-ink sm:text-3xl">
-                    {value}
-                  </dt>
-                  <dd className="mt-1 text-xs text-muted-foreground sm:text-sm">{label}</dd>
-                </div>
-              ))}
-            </dl>
+            ))}
           </div>
 
-          <div className="relative min-w-0">
-            <div className="relative mx-auto aspect-[4/5] w-full max-w-md">
-              <div className="absolute inset-0 rotate-3 rounded-[2rem] bg-gradient-primary opacity-15" />
-              <img
-                src={menu}
-                alt="Restaurant menu design by Vezelai Designs"
-                width={912}
-                height={1104}
-                className="absolute inset-0 h-full w-full rounded-[2rem] object-cover shadow-soft"
+          {/* Desktop CTA */}
+          <a
+            href="#contact"
+            className="
+              hidden
+              rounded-full
+              bg-[#ff2f3d]
+              px-6 py-3
+              text-[14px]
+              font-semibold
+              text-white
+              shadow-[0_8px_25px_rgba(255,47,61,0.18)]
+              transition-all
+              duration-200
+              hover:-translate-y-0.5
+              hover:bg-[#ef2433]
+              lg:inline-flex
+            "
+          >
+            Start a Project
+          </a>
+
+          {/* Mobile menu button */}
+          <button
+            type="button"
+            aria-label="Toggle navigation"
+            onClick={() => setOpen((value) => !value)}
+            className="
+              relative z-50
+              grid h-10 w-10
+              place-items-center
+              rounded-full
+              border border-black/10
+              bg-white/70
+              text-black
+              backdrop-blur-md
+              lg:hidden
+            "
+          >
+            {open ? (
+              <X className="h-5 w-5" />
+            ) : (
+              <Menu className="h-5 w-5" />
+            )}
+          </button>
+
+          {/* Mobile dropdown */}
+          {open && (
+            <div
+              className="
+                absolute
+                left-4 right-4 top-[66px]
+                overflow-hidden
+                rounded-2xl
+                border border-black/10
+                bg-white/95
+                p-3
+                shadow-2xl
+                backdrop-blur-xl
+                lg:hidden
+              "
+            >
+              {links.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setOpen(false)}
+                  className="
+                    block
+                    rounded-xl
+                    px-4 py-3
+                    text-sm
+                    font-medium
+                    text-black/75
+                    transition
+                    hover:bg-black/5
+                    hover:text-black
+                  "
+                >
+                  {link.label}
+                </a>
+              ))}
+
+              <a
+                href="#contact"
+                onClick={() => setOpen(false)}
+                className="
+                  mt-2
+                  block
+                  rounded-full
+                  bg-[#ff2f3d]
+                  px-4 py-3
+                  text-center
+                  text-sm
+                  font-semibold
+                  text-white
+                "
+              >
+                Start a Project
+              </a>
+            </div>
+          )}
+        </nav>
+      </header>
+
+      {/* =========================================================
+          HERO CONTENT
+      ========================================================= */}
+      <div
+        className="
+          mx-auto
+          flex h-full
+          w-full
+          max-w-[1380px]
+          items-center
+          px-5
+          pt-[78px]
+          pb-5
+
+          sm:px-8
+          sm:pt-[82px]
+
+          lg:px-10
+          lg:pt-[78px]
+          lg:pb-6
+        "
+      >
+        <div
+          className="
+            flex
+            w-full
+            max-w-[720px]
+            flex-col
+          "
+        >
+          {/* =====================================================
+              LABEL
+          ===================================================== */}
+          <div
+            className="
+              mb-[clamp(14px,2vh,24px)]
+              inline-flex
+              w-fit
+              items-center
+              gap-2
+              rounded-full
+              border
+              border-black/10
+              bg-white/75
+              px-4 py-2
+              shadow-sm
+              backdrop-blur-md
+            "
+          >
+            <span
+              className="
+                h-2 w-2
+                shrink-0
+                rounded-full
+                bg-[#ff2f3d]
+              "
+            />
+
+            <span
+              className="
+                text-[10px]
+                font-semibold
+                uppercase
+                tracking-[0.22em]
+                text-black/70
+
+                sm:text-[11px]
+              "
+            >
+              Global Apparel Design Brand
+            </span>
+          </div>
+
+          {/* =====================================================
+              MAIN HEADING
+          ===================================================== */}
+          <h1
+            className="
+              max-w-[480px]
+
+              text-[clamp(28px,3.5vw,52px)]
+              font-extrabold
+              leading-[0.88]
+              tracking-[-0.055em]
+
+              text-[#101114]
+            "
+          >
+            <span className="text-[#ff2638]">
+              Designs
+            </span>{" "}
+            that keep your
+            <br />
+            apparel brand
+            <br />
+            fresh.
+          </h1>
+
+          {/* =====================================================
+              DESCRIPTION
+          ===================================================== */}
+          <p
+            className="
+              mt-[clamp(12px,1.8vh,22px)]
+              max-w-[450px]
+
+              text-[clamp(12px,0.95vw,14px)]
+              leading-[1.5]
+
+              text-[#26303a]/80
+            "
+          >
+            CloudFitz Apparels delivers premium T-shirt, hoodie, and sweater designs for modern clothing brands worldwide. Get 20-30 fresh designs monthly, starting at just 299 AED. We turn your vision into pixel-perfect apparel designs built for real collections.
+          </p>
+
+          {/* =====================================================
+              BUTTONS
+          ===================================================== */}
+          <div
+            className="
+              mt-[clamp(16px,2.4vh,28px)]
+              flex
+              flex-wrap
+              items-center
+              gap-3
+            "
+          >
+            <a
+              href="#contact"
+              className="
+                group
+                inline-flex
+                items-center
+                gap-2
+                rounded-full
+                bg-[#ff2638]
+                px-6
+                py-3.5
+
+                text-[13px]
+                font-semibold
+                text-white
+
+                shadow-[0_10px_30px_rgba(255,38,56,0.20)]
+
+                transition-all
+                duration-200
+
+                hover:-translate-y-0.5
+                hover:bg-[#ed1f31]
+              "
+            >
+              Start Your Project
+
+              <ArrowUpRight
+                className="
+                  h-4 w-4
+                  transition-transform
+                  duration-200
+                  group-hover:translate-x-0.5
+                  group-hover:-translate-y-0.5
+                "
               />
-              <img
-                src={post}
-                alt="Social media post design for a restaurant"
-                width={912}
-                height={1104}
-                loading="lazy"
-                className="animate-float absolute -left-4 bottom-6 w-28 rounded-2xl border-4 border-card object-cover shadow-soft sm:-left-10 sm:w-36"
-              />
-              <img
-                src={card}
-                alt="Restaurant business card design"
-                width={912}
-                height={1104}
-                loading="lazy"
-                className="animate-float absolute -right-3 top-8 w-28 rounded-2xl border-4 border-card object-cover shadow-soft sm:-right-8 sm:w-36"
-                style={{ animationDelay: "1.5s" }}
-              />
-              <div className="absolute -bottom-5 right-2 flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 shadow-soft sm:right-8">
-                <Star className="h-4 w-4 fill-primary text-primary" />
-                <span className="text-xs font-semibold text-ink">4.9 / 5 client rating</span>
+            </a>
+
+            <a
+              href="#work"
+              className="
+                inline-flex
+                items-center
+                gap-2
+                rounded-full
+
+                border
+                border-black/20
+                bg-white/55
+
+                px-6
+                py-3.5
+
+                text-[13px]
+                font-semibold
+                text-black/75
+
+                backdrop-blur-sm
+
+                transition-all
+                duration-200
+
+                hover:border-black/30
+                hover:bg-white/75
+                hover:text-black
+              "
+            >
+              View Our Designs
+
+              <span className="text-base leading-none">
+                →
+              </span>
+            </a>
+          </div>
+
+          {/* =====================================================
+              STATS
+          ===================================================== */}
+          <div
+            className="
+              mt-[clamp(16px,2.6vh,30px)]
+              flex
+              flex-wrap
+              items-start
+              gap-x-7
+              gap-y-3
+
+              border-t
+              border-black/10
+              pt-[clamp(12px,1.8vh,20px)]
+            "
+          >
+            {/* Stat 1 */}
+            <div className="min-w-[90px]">
+              <div
+                className="
+                  text-[clamp(22px,2.2vw,34px)]
+                  font-bold
+                  leading-none
+                  tracking-tight
+                  text-[#111318]
+                "
+              >
+                20-30
+              </div>
+
+              <div
+                className="
+                  mt-1
+                  text-[9px]
+                  font-medium
+                  uppercase
+                  tracking-[0.08em]
+                  text-black/50
+                "
+              >
+                Designs Monthly
+              </div>
+            </div>
+
+            {/* Divider */}
+            <div className="hidden h-9 w-px bg-black/10 sm:block" />
+
+            {/* Stat 2 */}
+            <div className="min-w-[90px]">
+              <div
+                className="
+                  text-[clamp(22px,2.2vw,34px)]
+                  font-bold
+                  leading-none
+                  tracking-tight
+                  text-[#111318]
+                "
+              >
+                299 AED+
+              </div>
+
+              <div
+                className="
+                  mt-1
+                  text-[9px]
+                  font-medium
+                  uppercase
+                  tracking-[0.08em]
+                  text-black/50
+                "
+              >
+                Starting Price
+              </div>
+            </div>
+
+            {/* Divider */}
+            <div className="hidden h-9 w-px bg-black/10 sm:block" />
+
+            {/* Stat 3 */}
+            <div className="min-w-[105px]">
+              <div
+                className="
+                  text-[clamp(22px,2.2vw,34px)]
+                  font-bold
+                  leading-none
+                  tracking-tight
+                  text-[#111318]
+                "
+              >
+                50+
+              </div>
+
+              <div
+                className="
+                  mt-1
+                  text-[9px]
+                  font-medium
+                  uppercase
+                  tracking-[0.08em]
+                  text-black/50
+                "
+              >
+                Countries Served
+              </div>
+
+              <div className="mt-1 flex gap-1 text-xs">
+                🌍
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="mx-auto mt-10 max-w-6xl overflow-hidden">
-        <div className="flex w-max animate-marquee gap-10 opacity-70">
-          {[...Array(2)].map((_, dup) => (
-            <div key={dup} className="flex gap-10">
-              {[
-                "Al Mandi House",
-                "Rosso Kitchen",
-                "Ryoku Dubai",
-                "Spice Haus",
-                "Ember Kitchen",
-                "Layali Lounge",
-                "Palm Bay",
-              ].map((n) => (
-                <span
-                  key={n + dup}
-                  className="whitespace-nowrap font-display text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground"
-                >
-                  {n}
-                </span>
-              ))}
-            </div>
-          ))}
-        </div>
-      </div>
+      {/* =========================================================
+          MOBILE READABILITY
+      ========================================================= */}
+      <div
+        aria-hidden
+        className="
+          pointer-events-none
+          absolute
+          inset-x-0
+          bottom-0
+          h-20
+          bg-gradient-to-t
+          from-white/15
+          to-transparent
+          lg:hidden
+        "
+      />
     </section>
   );
 }

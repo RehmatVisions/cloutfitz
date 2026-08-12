@@ -1,36 +1,14 @@
 import { ArrowUpRight } from "lucide-react";
 import { Reveal } from "./Reveal";
-
-const steps = [
-  {
-    n: "01",
-    title: "Share your brief",
-    text: "Tell us about your restaurant, cuisine and audience. We reply within 20 minutes.",
-  },
-  {
-    n: "02",
-    title: "We plan the direction",
-    text: "Moodboard, references and a clear scope so you know exactly what you get.",
-  },
-  {
-    n: "03",
-    title: "Design & revisions",
-    text: "Your designer builds the concept, you review, we refine until it is perfect.",
-  },
-  {
-    n: "04",
-    title: "Print-ready delivery",
-    text: "Source files, print-ready PDFs and social-ready exports — all handed over.",
-  },
-];
+import { PROCESS } from "@/data/content";
 
 export function Process() {
   return (
     <section id="process" className="bg-surface px-3 py-20 sm:px-6 sm:py-28">
       <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[1fr_1fr] lg:items-center">
         <div className="grid gap-4 sm:grid-cols-2">
-          {steps.map((s, i) => (
-            <Reveal key={s.n} delay={i * 80}>
+          {PROCESS.steps.map((s, i) => (
+            <Reveal key={s.number} delay={i * 80}>
               <article
                 className={`hover-lift h-full rounded-3xl border p-6 ${
                   i === 1
@@ -43,7 +21,7 @@ export function Process() {
                     i === 1 ? "text-primary-foreground/70" : "text-primary"
                   }`}
                 >
-                  {s.n}
+                  {s.number}
                 </span>
                 <h3
                   className={`mt-4 text-base font-bold ${

@@ -6,6 +6,8 @@ import { Process } from "@/components/site/Process";
 import { Work } from "@/components/site/Work";
 import { Testimonials } from "@/components/site/Testimonials";
 import { Designers } from "@/components/site/Designers";
+import { BookingForm } from "@/components/site/BookingForm";
+import { DesignChatbot } from "@/components/site/DesignChatbot";
 import { Footer } from "@/components/site/Footer";
 
 const title = "Vezelai Designs — Restaurant Branding & Menu Design Studio";
@@ -29,14 +31,16 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <main className="min-h-screen overflow-x-hidden bg-background">
-      <Nav />
+      {/* <Nav /> */}
       <Hero />
       <Services />
       <Process />
       <Work />
       <Testimonials />
       <Designers />
+      <BookingForm />
       <Footer />
+      <DesignChatbot />
     </main>
   );
 }
