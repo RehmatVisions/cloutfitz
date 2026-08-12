@@ -167,37 +167,39 @@ export function DesignChatbot() {
     return (
       <button
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-6 right-6 z-40 group flex items-center gap-2 rounded-full bg-red-500 px-6 py-3.5 text-white shadow-[0_10px_30px_rgba(239,68,68,0.30)] hover:bg-red-600 transition-all duration-200 hover:scale-105"
+        className="fixed bottom-6 right-6 z-40 group flex items-center gap-2 rounded-full bg-red-500 px-4 sm:px-6 py-3.5 text-white shadow-[0_10px_30px_rgba(239,68,68,0.30)] hover:bg-red-600 transition-all duration-200 hover:scale-105"
       >
-        <MessageCircle className="h-5 w-5" />
-        <span className="text-sm font-semibold">Design Assistant</span>
+        <MessageCircle className="h-5 w-5 shrink-0" />
+        <span className="text-sm font-semibold hidden sm:inline">
+          Design Assistant
+        </span>
       </button>
     );
   }
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col w-full max-w-md h-[600px] rounded-2xl bg-white border border-black/[0.08] shadow-[0_20px_60px_rgba(0,0,0,0.15)] overflow-hidden">
+    <div className="fixed bottom-6 right-6 z-50 flex flex-col w-[calc(100vw-32px)] sm:w-full max-w-md h-[500px] sm:h-[600px] max-h-[85vh] rounded-2xl bg-white border border-black/[0.08] shadow-[0_20px_60px_rgba(0,0,0,0.15)] overflow-hidden">
       {/* Header */}
-      <div className="flex items-center justify-between px-6 py-4 border-b border-black/[0.08] bg-gradient-to-r from-red-50 to-red-50/50">
-        <div className="flex items-center gap-3">
-          <div className="flex items-center justify-center w-10 h-10 rounded-full bg-red-500 text-white">
+      <div className="flex items-center justify-between px-4 sm:px-6 py-4 border-b border-black/[0.08] bg-gradient-to-r from-red-50 to-red-50/50">
+        <div className="flex items-center gap-2 sm:gap-3 min-w-0">
+          <div className="flex items-center justify-center w-10 h-10 rounded-full bg-red-500 text-white shrink-0">
             <Sparkles className="h-5 w-5" />
           </div>
-          <div>
-            <h3 className="text-sm font-bold text-ink">Design Assistant</h3>
-            <p className="text-xs text-black/50">Always here to help</p>
+          <div className="min-w-0">
+            <h3 className="text-sm font-bold text-ink truncate">Design Assistant</h3>
+            <p className="text-xs text-black/50 hidden sm:block">Always here to help</p>
           </div>
         </div>
         <button
           onClick={() => setIsOpen(false)}
-          className="p-1 hover:bg-black/5 rounded-full transition-colors"
+          className="p-1 hover:bg-black/5 rounded-full transition-colors shrink-0"
         >
           <X className="h-5 w-5 text-black/70" />
         </button>
       </div>
 
       {/* Messages Container */}
-      <div className="flex-1 overflow-y-auto p-4 space-y-4">
+      <div className="flex-1 overflow-y-auto p-3 sm:p-4 space-y-4">
         {messages.map((message) => (
           <div key={message.id} className="space-y-2">
             <div
@@ -260,7 +262,7 @@ export function DesignChatbot() {
 
       {/* Quick Questions */}
       {messages.length <= 2 && (
-        <div className="px-4 py-3 border-t border-black/[0.08] max-h-40 overflow-y-auto">
+        <div className="px-3 sm:px-4 py-3 border-t border-black/[0.08] max-h-40 overflow-y-auto">
           <p className="text-xs font-semibold text-black/70 mb-2">
             Quick questions:
           </p>
@@ -269,7 +271,7 @@ export function DesignChatbot() {
               <button
                 key={question}
                 onClick={() => handleSendMessage(question, true)}
-                className="w-full text-left text-xs p-2 rounded bg-black/[0.03] hover:bg-red-50 text-black/80 hover:text-red-600 transition-colors border border-transparent hover:border-red-200"
+                className="w-full text-left text-xs p-2 rounded bg-black/[0.03] hover:bg-red-50 text-black/80 hover:text-red-600 transition-colors border border-transparent hover:border-red-200 line-clamp-2"
               >
                 {question}
               </button>
@@ -279,7 +281,7 @@ export function DesignChatbot() {
       )}
 
       {/* Input Area */}
-      <div className="px-4 py-3 border-t border-black/[0.08] bg-white">
+      <div className="px-3 sm:px-4 py-3 border-t border-black/[0.08] bg-white">
         <div className="flex items-center gap-2">
           <input
             type="text"
@@ -290,14 +292,14 @@ export function DesignChatbot() {
                 handleSendMessage();
               }
             }}
-            placeholder="Ask me anything..."
+            placeholder="Ask me..."
             className="flex-1 bg-black/[0.03] border border-black/[0.08] rounded-full px-4 py-2 text-sm placeholder:text-black/40 focus:border-red-500 focus:outline-none focus:ring-1 focus:ring-red-500 transition-all"
             disabled={isLoading}
           />
           <button
             onClick={() => handleSendMessage()}
             disabled={isLoading || !inputValue.trim()}
-            className="p-2 rounded-full bg-red-500 text-white hover:bg-red-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            className="p-2 rounded-full bg-red-500 text-white hover:bg-red-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed shrink-0"
           >
             <Send className="h-4 w-4" />
           </button>

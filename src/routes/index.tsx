@@ -8,6 +8,7 @@ import { Testimonials } from "@/components/site/Testimonials";
 import { Designers } from "@/components/site/Designers";
 import { BookingForm } from "@/components/site/BookingForm";
 import { DesignChatbot } from "@/components/site/DesignChatbot";
+import { ScrollToTop } from "@/components/site/ScrollToTop";
 import { Footer } from "@/components/site/Footer";
 
 const title = "Vezelai Designs — Restaurant Branding & Menu Design Studio";
@@ -41,6 +42,7 @@ function Index() {
       <BookingForm />
       <Footer />
       <DesignChatbot />
+      <ScrollToTop />
     </main>
   );
 }

@@ -1,6 +1,7 @@
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Logo } from "./Logo";
+
 import heroBackground from "../../assets/hero/herobackrond.png";
 
 const links = [
@@ -18,13 +19,15 @@ export function Hero() {
       id="top"
       className="
         relative isolate
-        h-[100svh] min-h-[620px]
+        min-h-[100svh]
         w-full overflow-hidden
-        bg-white
+        bg-[#f5f1e9]
       "
     >
       {/* =========================================================
-          BACKGROUND IMAGE
+          HERO BACKGROUND
+          Desktop = original image
+          Mobile = none (light background only)
       ========================================================= */}
       <img
         src={heroBackground}
@@ -34,30 +37,38 @@ export function Hero() {
           h-full w-full
           object-cover
           object-center
+          hidden
+          md:block
         "
       />
 
-      {/* Very subtle readability layer */}
+      {/* =========================================================
+          DESKTOP ONLY LIGHT READABILITY
+      ========================================================= */}
       <div
         aria-hidden
         className="
           pointer-events-none
           absolute inset-0 -z-10
+          hidden
           bg-gradient-to-r
-          from-white/20
+          from-white/25
           via-transparent
           to-transparent
+          lg:block
         "
       />
 
       {/* =========================================================
           NAVBAR
-          NOT FIXED — PART OF HERO
       ========================================================= */}
       <header
         className="
-          absolute left-0 right-0 top-0 z-40
+          absolute
+          left-0 right-0 top-0
+          z-50
           px-5 pt-4
+
           sm:px-8 sm:pt-5
           lg:px-10
         "
@@ -73,19 +84,27 @@ export function Hero() {
             justify-between
           "
         >
-          {/* Logo */}
+          {/* =====================================================
+              LOGO
+          ===================================================== */}
           <a
             href="#top"
+            aria-label="CLOUTFITZ home"
             className="
               relative z-50
-              flex shrink-0
+              flex
+              shrink-0
               items-center
+              max-md:w-[104px]
+              md:w-auto
             "
           >
             <Logo />
           </a>
 
-          {/* Desktop navigation */}
+          {/* =====================================================
+              DESKTOP NAVIGATION
+          ===================================================== */}
           <div className="hidden items-center gap-8 lg:flex">
             {links.map((link) => (
               <a
@@ -105,7 +124,9 @@ export function Hero() {
             ))}
           </div>
 
-          {/* Desktop CTA */}
+          {/* =====================================================
+              DESKTOP CTA
+          ===================================================== */}
           <a
             href="#contact"
             className="
@@ -127,39 +148,49 @@ export function Hero() {
             Start a Project
           </a>
 
-          {/* Mobile menu button */}
+          {/* =====================================================
+              MOBILE MENU
+          ===================================================== */}
           <button
             type="button"
             aria-label="Toggle navigation"
+            aria-expanded={open}
             onClick={() => setOpen((value) => !value)}
             className="
               relative z-50
-              grid h-10 w-10
+              grid
+              h-9 w-9
               place-items-center
               rounded-full
-              border border-black/10
-              bg-white/70
+              border
+              border-black/10
+              bg-white/75
               text-black
+              shadow-[0_4px_16px_rgba(0,0,0,0.08)]
               backdrop-blur-md
               lg:hidden
             "
           >
             {open ? (
-              <X className="h-5 w-5" />
+              <X className="h-[18px] w-[18px]" />
             ) : (
-              <Menu className="h-5 w-5" />
+              <Menu className="h-[18px] w-[18px]" />
             )}
           </button>
 
-          {/* Mobile dropdown */}
+          {/* =====================================================
+              MOBILE MENU PANEL
+          ===================================================== */}
           {open && (
             <div
               className="
                 absolute
-                left-4 right-4 top-[66px]
+                left-4 right-4
+                top-[66px]
                 overflow-hidden
                 rounded-2xl
-                border border-black/10
+                border
+                border-black/10
                 bg-white/95
                 p-3
                 shadow-2xl
@@ -215,17 +246,21 @@ export function Hero() {
       ========================================================= */}
       <div
         className="
+          relative
+          z-10
           mx-auto
-          flex h-full
+          flex
+          min-h-[100svh]
           w-full
           max-w-[1380px]
           items-center
+
           px-5
-          pt-[78px]
-          pb-5
+          pt-[82px]
+          pb-8
 
           sm:px-8
-          sm:pt-[82px]
+          sm:pt-[90px]
 
           lg:px-10
           lg:pt-[78px]
@@ -238,14 +273,17 @@ export function Hero() {
             w-full
             max-w-[720px]
             flex-col
+
+            max-md:justify-center
+            max-md:pb-[5vh]
           "
         >
           {/* =====================================================
-              LABEL
+              BRAND LABEL
           ===================================================== */}
           <div
             className="
-              mb-[clamp(14px,2vh,24px)]
+              mb-4
               inline-flex
               w-fit
               items-center
@@ -254,9 +292,13 @@ export function Hero() {
               border
               border-black/10
               bg-white/75
-              px-4 py-2
+              px-3.5
+              py-2
               shadow-sm
               backdrop-blur-md
+
+              sm:mb-5
+              sm:px-4
             "
           >
             <span
@@ -264,19 +306,20 @@ export function Hero() {
                 h-2 w-2
                 shrink-0
                 rounded-full
-                bg-[#ff2f3d]
+                bg-[#ff2638]
               "
             />
 
             <span
               className="
-                text-[10px]
+                text-[9px]
                 font-semibold
                 uppercase
-                tracking-[0.22em]
-                text-black/70
+                tracking-[0.18em]
+                text-black/65
 
-                sm:text-[11px]
+                sm:text-[10px]
+                sm:tracking-[0.20em]
               "
             >
               Global Apparel Design Brand
@@ -284,18 +327,21 @@ export function Hero() {
           </div>
 
           {/* =====================================================
-              MAIN HEADING
+              HEADING
           ===================================================== */}
           <h1
             className="
-              max-w-[480px]
-
-              text-[clamp(28px,3.5vw,52px)]
+              max-w-[500px]
+              text-[clamp(30px,3.5vw,52px)]
               font-extrabold
-              leading-[0.88]
+              leading-[0.89]
               tracking-[-0.055em]
-
               text-[#101114]
+
+              max-md:max-w-[310px]
+              max-md:text-[34px]
+              max-md:leading-[0.92]
+              max-md:tracking-[-0.045em]
             "
           >
             <span className="text-[#ff2638]">
@@ -313,53 +359,65 @@ export function Hero() {
           ===================================================== */}
           <p
             className="
-              mt-[clamp(12px,1.8vh,22px)]
-              max-w-[450px]
-
-              text-[clamp(12px,0.95vw,14px)]
+              mt-4
+              max-w-[455px]
+              text-[14px]
               leading-[1.5]
-
               text-[#26303a]/80
+
+              max-md:mt-3
+              max-md:max-w-[300px]
+              max-md:text-[11px]
+              max-md:leading-[1.45]
             "
           >
-            CloudFitz Apparels delivers premium T-shirt, hoodie, and sweater designs for modern clothing brands worldwide. Get 20-30 fresh designs monthly, starting at just 299 AED. We turn your vision into pixel-perfect apparel designs built for real collections.
+            CloudFitz Apparels delivers premium T-shirt, hoodie, and
+            sweater designs for modern clothing brands worldwide.
+            Get 20-30 fresh designs monthly, starting at just 299 AED.
+            We turn your vision into pixel-perfect apparel designs
+            built for real collections.
           </p>
 
           {/* =====================================================
-              BUTTONS
+              CTA BUTTONS
           ===================================================== */}
           <div
             className="
-              mt-[clamp(16px,2.4vh,28px)]
+              mt-6
               flex
-              flex-wrap
               items-center
               gap-3
+
+              max-md:mt-4
+              max-md:gap-2
             "
           >
+            {/* Primary */}
             <a
               href="#contact"
               className="
                 group
                 inline-flex
                 items-center
+                justify-center
                 gap-2
                 rounded-full
                 bg-[#ff2638]
                 px-6
                 py-3.5
-
                 text-[13px]
                 font-semibold
                 text-white
-
                 shadow-[0_10px_30px_rgba(255,38,56,0.20)]
-
                 transition-all
                 duration-200
-
                 hover:-translate-y-0.5
                 hover:bg-[#ed1f31]
+
+                max-md:px-4
+                max-md:py-3
+                max-md:text-[10.5px]
+                max-md:whitespace-nowrap
               "
             >
               Start Your Project
@@ -371,42 +429,52 @@ export function Hero() {
                   duration-200
                   group-hover:translate-x-0.5
                   group-hover:-translate-y-0.5
+                  max-md:h-3.5
+                  max-md:w-3.5
                 "
               />
             </a>
 
+            {/* Secondary */}
             <a
               href="#work"
               className="
                 inline-flex
                 items-center
+                justify-center
                 gap-2
                 rounded-full
-
                 border
-                border-black/20
-                bg-white/55
-
+                border-black/15
+                bg-white/60
                 px-6
                 py-3.5
-
                 text-[13px]
                 font-semibold
                 text-black/75
-
+                shadow-sm
                 backdrop-blur-sm
-
                 transition-all
                 duration-200
-
-                hover:border-black/30
-                hover:bg-white/75
+                hover:border-black/25
+                hover:bg-white/80
                 hover:text-black
+
+                max-md:px-4
+                max-md:py-3
+                max-md:text-[10.5px]
+                max-md:whitespace-nowrap
               "
             >
               View Our Designs
 
-              <span className="text-base leading-none">
+              <span
+                className="
+                  text-base
+                  leading-none
+                  max-md:text-sm
+                "
+              >
                 →
               </span>
             </a>
@@ -417,27 +485,32 @@ export function Hero() {
           ===================================================== */}
           <div
             className="
-              mt-[clamp(16px,2.6vh,30px)]
+              mt-7
               flex
-              flex-wrap
               items-start
-              gap-x-7
-              gap-y-3
-
+              gap-7
               border-t
               border-black/10
-              pt-[clamp(12px,1.8vh,20px)]
+              pt-5
+
+              max-md:mt-5
+              max-md:grid
+              max-md:grid-cols-3
+              max-md:gap-2
+              max-md:pt-3
             "
           >
-            {/* Stat 1 */}
-            <div className="min-w-[90px]">
+            {/* 20-30 */}
+            <div className="min-w-0">
               <div
                 className="
-                  text-[clamp(22px,2.2vw,34px)]
+                  text-[34px]
                   font-bold
                   leading-none
                   tracking-tight
                   text-[#111318]
+
+                  max-md:text-[20px]
                 "
               >
                 20-30
@@ -449,26 +522,29 @@ export function Hero() {
                   text-[9px]
                   font-medium
                   uppercase
-                  tracking-[0.08em]
+                  tracking-[0.06em]
                   text-black/50
+
+                  max-md:text-[6.5px]
                 "
               >
                 Designs Monthly
               </div>
             </div>
 
-            {/* Divider */}
             <div className="hidden h-9 w-px bg-black/10 sm:block" />
 
-            {/* Stat 2 */}
-            <div className="min-w-[90px]">
+            {/* Price */}
+            <div className="min-w-0">
               <div
                 className="
-                  text-[clamp(22px,2.2vw,34px)]
+                  text-[34px]
                   font-bold
                   leading-none
                   tracking-tight
                   text-[#111318]
+
+                  max-md:text-[20px]
                 "
               >
                 299 AED+
@@ -480,26 +556,29 @@ export function Hero() {
                   text-[9px]
                   font-medium
                   uppercase
-                  tracking-[0.08em]
+                  tracking-[0.06em]
                   text-black/50
+
+                  max-md:text-[6.5px]
                 "
               >
                 Starting Price
               </div>
             </div>
 
-            {/* Divider */}
             <div className="hidden h-9 w-px bg-black/10 sm:block" />
 
-            {/* Stat 3 */}
-            <div className="min-w-[105px]">
+            {/* Countries */}
+            <div className="min-w-0">
               <div
                 className="
-                  text-[clamp(22px,2.2vw,34px)]
+                  text-[34px]
                   font-bold
                   leading-none
                   tracking-tight
                   text-[#111318]
+
+                  max-md:text-[20px]
                 "
               >
                 50+
@@ -511,38 +590,22 @@ export function Hero() {
                   text-[9px]
                   font-medium
                   uppercase
-                  tracking-[0.08em]
+                  tracking-[0.06em]
                   text-black/50
+
+                  max-md:text-[6.5px]
                 "
               >
                 Countries Served
               </div>
 
-              <div className="mt-1 flex gap-1 text-xs">
+              <div className="mt-1 text-xs max-md:text-[9px]">
                 🌍
               </div>
             </div>
           </div>
         </div>
       </div>
-
-      {/* =========================================================
-          MOBILE READABILITY
-      ========================================================= */}
-      <div
-        aria-hidden
-        className="
-          pointer-events-none
-          absolute
-          inset-x-0
-          bottom-0
-          h-20
-          bg-gradient-to-t
-          from-white/15
-          to-transparent
-          lg:hidden
-        "
-      />
     </section>
   );
 }
