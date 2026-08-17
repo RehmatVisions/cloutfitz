@@ -51,10 +51,10 @@ export function Process() {
               A calm process, <span className="text-gradient-primary">sharp results</span>
             </h2>
             <p className="mt-5 text-base leading-relaxed text-muted-foreground">
-              We have designed for restaurants long enough to know the pressure of an
-              opening date. That is why every project runs on a fixed schedule, a single
-              point of contact and unlimited revisions inside the agreed direction — no
-              surprises, no chasing.
+              We have designed for apparel brands long enough to know the importance of
+              consistency and monthly delivery. That is why every project runs on a fixed
+              schedule, a single point of contact and unlimited revisions inside the agreed
+              direction — no surprises, no chasing.
             </p>
             <ul className="mt-6 space-y-3">
               {[

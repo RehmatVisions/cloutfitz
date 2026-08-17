@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Logo } from "./Logo";
 
 import heroBackground from "../../assets/hero/herobackrond.png";
+import mobileHeroBackground from "../../assets/hero/mobilehero.png";
 
 const links = [
   { label: "Services", href: "#services" },
@@ -27,20 +28,25 @@ export function Hero() {
       {/* =========================================================
           HERO BACKGROUND
           Desktop = original image
-          Mobile = none (light background only)
+          Mobile = mobile hero image
       ========================================================= */}
-      <img
-        src={heroBackground}
-        alt="CLOUTFITZ apparel design studio"
-        className="
-          absolute inset-0 -z-20
-          h-full w-full
-          object-cover
-          object-center
-          hidden
-          md:block
-        "
-      />
+      <picture>
+        <source
+          media="(max-width: 768px)"
+          srcSet={mobileHeroBackground}
+        />
+
+        <img
+          src={heroBackground}
+          alt="CLOUTFITZ apparel design studio"
+          className="
+            absolute inset-0 -z-20
+            h-full w-full
+            object-cover
+            object-center
+          "
+        />
+      </picture>
 
       {/* =========================================================
           DESKTOP ONLY LIGHT READABILITY
@@ -88,7 +94,7 @@ export function Hero() {
               LOGO
           ===================================================== */}
           <a
-            href="#top"
+            href="#contact"
             aria-label="CLOUTFITZ home"
             className="
               relative z-50
@@ -371,9 +377,9 @@ export function Hero() {
               max-md:leading-[1.45]
             "
           >
-            CloudFitz Apparels delivers premium T-shirt, hoodie, and
+            CLOUTFITZ Apparels delivers premium T-shirt, hoodie, and
             sweater designs for modern clothing brands worldwide.
-            Get 20-30 fresh designs monthly, starting at just 299 AED.
+            Get 20-30 fresh designs monthly, starting at just 399 AED.
             We turn your vision into pixel-perfect apparel designs
             built for real collections.
           </p>
@@ -538,16 +544,38 @@ export function Hero() {
             <div className="min-w-0">
               <div
                 className="
-                  text-[34px]
-                  font-bold
-                  leading-none
-                  tracking-tight
-                  text-[#111318]
-
-                  max-md:text-[20px]
+                  flex
+                  items-baseline
+                  gap-2
                 "
               >
-                299 AED+
+                <span
+                  className="
+                    text-[24px]
+                    font-bold
+                    leading-none
+                    tracking-tight
+                    text-black/40
+                    line-through
+
+                    max-md:text-[14px]
+                  "
+                >
+                  499 AED
+                </span>
+                <div
+                  className="
+                    text-[34px]
+                    font-bold
+                    leading-none
+                    tracking-tight
+                    text-[#111318]
+
+                    max-md:text-[20px]
+                  "
+                >
+                  399 AED+
+                </div>
               </div>
 
               <div
@@ -581,7 +609,7 @@ export function Hero() {
                   max-md:text-[20px]
                 "
               >
-                50+
+                5+
               </div>
 
               <div
