@@ -1,19 +1,15 @@
 /**
- * 🎨 CloudFitz PORTFOLIO - CLOTHING BRAND DESIGNS
+ * 🎨 CLOUTFITZ PORTFOLIO - APPAREL DESIGN SHOWCASE
  * 
- * Monthly basis manufacturing cloth brand designs
- * T-shirts, Hoodies, Sweaters, Jerseys, etc.
+ * Monthly apparel design portfolio
+ * T-shirts, Hoodies, Sweaters, Social Posts, Branding, etc.
  */
 
-import resturantlogo from "@/assets/resturantlogo.jpg";
-import restruantlog from "@/assets/restruantlog.jpg";
-import restruantlog2 from "@/assets/restruantlog2.jpg";
-import resturantlog1 from "@/assets/resturantlog1.jpg";
-import restruanltlog from "@/assets/restruanltlog.jpg";
-
-import resturantpost1 from "@/assets/resturantpost1.jpg";
-import resturantpost3 from "@/assets/resturantpost3.jpg";
-import restruantpost4 from "@/assets/restruantpost4.jpg";
+import img1 from "@/assets/portfolio/file_000000000b6c8211a7fe14b6a5a54431.png";
+import img2 from "@/assets/portfolio/file_000000006b648207b9dfcfca6633dc23.png";
+import img3 from "@/assets/portfolio/file_00000000b95c82079f5abee66e41b5f5.png";
+import img4 from "@/assets/portfolio/file_00000000dae4820799dae607055adbca.png";
+import img5 from "@/assets/portfolio/first.png";
 
 export type PortfolioItem = {
   id: string;
@@ -23,156 +19,120 @@ export type PortfolioItem = {
   category: string;
   image: string;
   description?: string;
-  colors?: string[];
-  tools?: string[];
 };
 
+const categories = ["Logo Design", "Brand Identity", "Apparel Graphics", "Product Mockups", "Social Media", "Packaging"] as const;
+const clients = ["Fashion Brand", "Urban Wear", "Modern Threads", "Apparel Co", "Design Studio"] as const;
+
+// Generate portfolio items from available images
 export const portfolioItems: PortfolioItem[] = [
-  // ==========================================
-  // CLOTHING BRAND - LOGO & BRANDING
-  // ==========================================
   {
-    id: "fashion-logo-1",
-    title: "Logo & Branding",
-    client: "Fashion House",
+    id: "portfolio-1",
+    title: "Premium Logo Design",
+    client: clients[0],
     niche: "Clothing Brand",
-    category: "Logo & Branding",
-    image: resturantlogo,
-    description: "Professional clothing brand logo for apparel manufacturing",
+    category: categories[0],
+    image: img1,
+    description: "Bold, memorable logo design for modern apparel brand",
   },
   {
-    id: "urban-logo-2",
-    title: "Logo & Branding",
-    client: "Urban Wear",
+    id: "portfolio-2",
+    title: "Complete Brand Identity",
+    client: clients[1],
     niche: "Clothing Brand",
-    category: "Logo & Branding",
-    image: restruantlog,
-    description: "Casual wear brand identity design",
+    category: categories[1],
+    image: img2,
+    description: "Full brand system with guidelines and variations",
   },
   {
-    id: "style-logo-3",
-    title: "Logo & Branding",
-    client: "Style Studio",
+    id: "portfolio-3",
+    title: "Apparel Graphic Design",
+    client: clients[2],
     niche: "Clothing Brand",
-    category: "Logo & Branding",
-    image: restruantlog2,
+    category: categories[2],
+    image: img3,
+    description: "Custom T-shirt and hoodie graphics ready for print",
   },
   {
-    id: "trend-logo-4",
-    title: "Logo & Branding",
-    client: "Trend Boutique",
+    id: "portfolio-4",
+    title: "Product Mockup Series",
+    client: clients[3],
     niche: "Clothing Brand",
-    category: "Logo & Branding",
-    image: resturantlog1,
+    category: categories[3],
+    image: img4,
+    description: "Professional mockups on hoodies, T-shirts, and caps",
   },
   {
-    id: "modern-logo-5",
-    title: "Logo & Branding",
-    client: "Modern Threads",
+    id: "portfolio-5",
+    title: "Social Media Campaign",
+    client: clients[4],
     niche: "Clothing Brand",
-    category: "Logo & Branding",
-    image: restruanltlog,
+    category: categories[4],
+    image: img5,
+    description: "Instagram-ready designs for product launches",
   },
-
-  // ==========================================
-  // CLOTHING BRAND - SOCIAL POSTS
-  // ==========================================
+  // Repeat items for more portfolio display
   {
-    id: "fashion-post-1",
-    title: "Social Posts",
-    client: "Fashion House",
+    id: "portfolio-6",
+    title: "Brand Logo Refresh",
+    client: clients[1],
     niche: "Clothing Brand",
-    category: "Social Posts",
-    image: resturantpost1,
-    description: "T-shirt design showcase post",
+    category: categories[0],
+    image: img1,
+    description: "Modern logo redesign with strong visual identity",
   },
   {
-    id: "urban-post-2",
-    title: "Social Posts",
-    client: "Urban Wear",
+    id: "portfolio-7",
+    title: "Streetwear Brand System",
+    client: clients[2],
     niche: "Clothing Brand",
-    category: "Social Posts",
-    image: resturantpost3,
-    description: "Hoodie & sweater collection post",
+    category: categories[1],
+    image: img2,
+    description: "Complete identity system for streetwear brand",
   },
   {
-    id: "style-post-3",
-    title: "Social Posts",
-    client: "Style Studio",
+    id: "portfolio-8",
+    title: "Hoodie Design Collection",
+    client: clients[3],
     niche: "Clothing Brand",
-    category: "Social Posts",
-    image: restruantpost4,
-    description: "Jersey design campaign",
-  },
-
-  // ==========================================
-  // CLOTHING BRAND - BUSINESS CARDS
-  // ==========================================
-  {
-    id: "fashion-cards-1",
-    title: "Business Cards",
-    client: "Fashion House",
-    niche: "Clothing Brand",
-    category: "Business Cards",
-    image: "work-card.jpg",
-    description: "Premium business cards for brand representatives",
+    category: categories[2],
+    image: img3,
+    description: "Bold hoodie graphics with multiple colorways",
   },
   {
-    id: "urban-cards-2",
-    title: "Business Cards",
-    client: "Urban Wear",
+    id: "portfolio-9",
+    title: "Packaging Design",
+    client: clients[4],
     niche: "Clothing Brand",
-    category: "Business Cards",
-    image: "work-card.jpg",
+    category: categories[3],
+    image: img4,
+    description: "Premium packaging and unboxing experience design",
   },
   {
-    id: "style-cards-3",
-    title: "Business Cards",
-    client: "Style Studio",
+    id: "portfolio-10",
+    title: "Instagram Campaign",
+    client: clients[0],
     niche: "Clothing Brand",
-    category: "Business Cards",
-    image: "work-card.jpg",
-  },
-
-  // ==========================================
-  // CLOTHING BRAND - FLYERS
-  // ==========================================
-  {
-    id: "fashion-flyer-1",
-    title: "Flyers",
-    client: "Fashion House",
-    niche: "Clothing Brand",
-    category: "Flyers",
-    image: "work-flyer.jpg",
-    description: "Product launch flyer for new collection",
+    category: categories[4],
+    image: img5,
+    description: "Professional social media content for monthly campaigns",
   },
   {
-    id: "urban-flyer-2",
-    title: "Flyers",
-    client: "Urban Wear",
+    id: "portfolio-11",
+    title: "Corporate Logo Design",
+    client: clients[3],
     niche: "Clothing Brand",
-    category: "Flyers",
-    image: "work-flyer.jpg",
-  },
-
-  // ==========================================
-  // CLOTHING BRAND - PACKAGING
-  // ==========================================
-  {
-    id: "fashion-packaging-1",
-    title: "Packaging",
-    client: "Fashion House",
-    niche: "Clothing Brand",
-    category: "Packaging",
-    image: "work-packaging.jpg",
-    description: "Custom packaging design for apparel shipments",
+    category: categories[0],
+    image: img1,
+    description: "Professional branding for corporate apparel line",
   },
   {
-    id: "urban-packaging-2",
-    title: "Packaging",
-    client: "Urban Wear",
+    id: "portfolio-12",
+    title: "Complete Design Package",
+    client: clients[4],
     niche: "Clothing Brand",
-    category: "Packaging",
-    image: "work-packaging.jpg",
+    category: categories[1],
+    image: img2,
+    description: "Full brand identity with logos, guidelines, and mockups",
   },
 ];

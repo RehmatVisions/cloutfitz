@@ -17,7 +17,7 @@ interface Message {
   helpful?: boolean;
 }
 
-const initialBotResponse = `Hey there! 👋 I'm Claude, CloudFitz's design assistant. I'm here to help you understand our apparel design services. 
+const initialBotResponse = `Hey there! 👋 I'm Claude, CLOUTFITZ's design assistant. I'm here to help you understand our apparel design services. 
 
 What would you like to know?`;
 
@@ -34,11 +34,11 @@ const botResponses: Record<string, string> = {
   "How does the monthly design package work?":
     "Our monthly design package gives you access to regular fresh designs delivered on a schedule. You tell us your brand style and preferences, we create 20-30 unique designs tailored to your apparel brand every month. It's like having a personal design team on retainer. You get all files in every format, unlimited revisions, and dedicated support.",
 
-  "What's included in the 299 AED package?":
-    "The 299 AED Basic package includes:\n• 4-6 T-shirt designs monthly\n• 3-4 Hoodie/Sweater designs\n• Brand consistency maintained\n• All files in PNG, PSD, and vector formats\n• Up to 2 revision rounds\n\nFor unlimited revisions and more designs, check our 499 AED and 799 AED premium packages.",
+  "What's included in the 399 AED package?":
+    "The 399 AED package includes:\n• Logo & brand identity\n• 4-6 T-shirt designs monthly\n• 3-4 Hoodie/Sweater designs\n• Product mockups (T-shirts, hoodies, caps)\n• Brand guidelines & consistency\n• All files in PNG, PSD, and vector formats\n• Up to 2 revision rounds\n\nFor unlimited revisions and more designs, check our Premium (799 AED) and Elite (1,299 AED) packages.",
 
   "How many designs do I get per month?":
-    "With CloudFitz, you get 20-30 fresh designs every single month. That breaks down to:\n• 4-6 T-shirt designs\n• 3-4 Hoodie/Sweater designs\n• 8-10 Social media designs\n• Plus logo and branding variations\n\nAll tailored to your brand and delivered on schedule.",
+    "With CLOUTFITZ, you get 20-30 fresh designs every single month. That breaks down to:\n• 4-6 T-shirt designs\n• 3-4 Hoodie/Sweater designs\n• 8-10 Social media designs\n• Plus logo and branding variations\n\nAll tailored to your brand and delivered on schedule.",
 
   "What file formats do you provide?":
     "We deliver in all formats you need:\n• Print-ready PNG files (300 DPI)\n• Photoshop source files (PSD)\n• Vector files (AI/EPS)\n• Web-optimized JPGs\n• SVG for digital use\n\nEverything you need for manufacturing, e-commerce, and marketing.",
@@ -94,7 +94,7 @@ export function DesignChatbot() {
       message.includes("what") ||
       message.includes("apparel")
     ) {
-      return "CloudFitz specializes in premium apparel designs. We create:\n• T-shirt graphics and prints\n• Hoodie and sweater designs\n• Social media content\n• Brand identity and logos\n\nEvery design is custom-made for your brand. Interested in any specific service?";
+      return "CLOUTFITZ specializes in premium apparel designs. We create:\n• T-shirt graphics and prints\n• Hoodie and sweater designs\n• Social media content\n• Brand identity and logos\n\nEvery design is custom-made for your brand. Interested in any specific service?";
     }
 
     if (
@@ -115,7 +115,7 @@ export function DesignChatbot() {
     }
 
     if (message.includes("contact") || message.includes("support")) {
-      return "You can reach us through:\n📧 Email: hello@cloudfitz.com\n💬 WhatsApp: +971 50 XXX XXXX\n🌐 Visit: www.cloudfitz.com\n📋 Use the booking form to schedule a call\n\nWe usually respond within 24 hours!";
+      return "You can reach us through:\n📧 Email: hello@cloutfitz.com\n📱 WhatsApp: +92 3244646260\n🌐 Visit: www.cloutfitz.com\n📋 Use the booking form to schedule a call\n\nWe usually respond within 24 hours!";
     }
 
     // Default response

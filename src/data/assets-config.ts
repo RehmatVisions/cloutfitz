@@ -5,34 +5,28 @@
  * Naya image add karna hai? Sirf yaha add karo, aur portfolio automatically update ho jayega!
  */
 
-import menu from "@/assets/menu1.jpg";
-import logo from "@/assets/resturantlogo.jpg";
-import post from "@/assets/cafepost.jpg";
-import website from "@/assets/work-website.jpg";
-import flyer from "@/assets/work-flyer.jpg";
-import card from "@/assets/work-card.jpg";
-import packaging from "@/assets/work-packaging.jpg";
+import img1 from "@/assets/portfolio/file_000000000b6c8211a7fe14b6a5a54431.png";
+import img2 from "@/assets/portfolio/file_000000006b648207b9dfcfca6633dc23.png";
+import img3 from "@/assets/portfolio/file_00000000b95c82079f5abee66e41b5f5.png";
+import img4 from "@/assets/portfolio/file_00000000dae4820799dae607055adbca.png";
+import img5 from "@/assets/portfolio/first.png";
 
 /**
  * Category ke hisaab se images map karo
  * 
  * HOW TO ADD NEW CATEGORY WITH IMAGE:
- * 1. Apna image import karo upar (e.g., import myImage from "@/assets/work-something.jpg")
+ * 1. Apna image import karo upar (e.g., import myImage from "@/assets/portfolio/image.png")
  * 2. Yaha add karo: "Category Name": myImage
  * 3. Works.ts me category add karo
  * Done! ✅
  */
 export const categoryImages: Record<string, string> = {
-  "Menu Design": menu,
-  "Social Posts": post,
-  "Logo & Branding": logo,
-  "Flyers": flyer,
-  "Business Cards": card,
-  "Packaging": packaging,
-  "Website Design": website,
-  // Naye categories yaha add karo:
-  // "Brochure Design": brochureImage,
-  // "Print Design": printImage,
+  "Logo Design": img1,
+  "Social Posts": img2,
+  "Brand Identity": img3,
+  "Apparel Graphics": img4,
+  "Product Mockups": img5,
+  "Packaging": img1,
 };
 
 /**
@@ -48,13 +42,12 @@ export const niches = [
  * Sub-filter row
  */
 export const categories = [
-  "Menu Design",
-  "Social Posts",
-  "Logo & Branding",
-  "Flyers",
-  "Business Cards",
+  "Logo Design",
+  "Brand Identity",
+  "Apparel Graphics",
+  "Product Mockups",
+  "Social Media",
   "Packaging",
-  "Website Design",
 ] as const;
 
 /**

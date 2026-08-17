@@ -11,9 +11,9 @@ import { DesignChatbot } from "@/components/site/DesignChatbot";
 import { ScrollToTop } from "@/components/site/ScrollToTop";
 import { Footer } from "@/components/site/Footer";
 
-const title = "Vezelai Designs — Restaurant Branding & Menu Design Studio";
+const title = "CLOUTFITZ Apparels — Premium Apparel Design & Clothing Branding Studio";
 const description =
-  "Vezelai Designs creates menus, logos, flyers, social posts, packaging and websites for restaurants in Dubai and worldwide.";
+  "CLOUTFITZ Apparels creates premium T-shirt, hoodie, and sweater designs, logos, branding and social posts for clothing brands worldwide. 20-30 designs monthly starting at 399 AED.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -37,8 +37,8 @@ function Index() {
       <Services />
       <Process />
       <Work />
-      <Testimonials />
       <Designers />
+      <Testimonials />
       <BookingForm />
       <Footer />
       <DesignChatbot />
