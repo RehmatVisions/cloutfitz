@@ -9,15 +9,16 @@
 // BRAND INFO
 // ==========================================
 export const BRAND = {
-  name: "CloudFitz Apparels",
+  name: "CLOUTFITZ Apparels",
   tagline: "20-30 Premium Apparel Designs Monthly",
-  fullName: "CloudFitz Apparels — Premium Apparel Design Studio Worldwide",
-  description: "CloudFitz Apparels is a global apparel design studio creating premium T-shirt, hoodie, sweater and clothing designs for modern brands. Receive 20-30 fresh, pixel-perfect designs monthly starting at 299 AED. We deliver worldwide with consistent quality and unlimited revisions.",
+  fullName: "CLOUTFITZ Apparels — Premium Apparel Design Studio Worldwide",
+  description: "CLOUTFITZ Apparels is a global apparel design studio creating premium T-shirt, hoodie, sweater and clothing designs for modern brands. Receive 20-30 fresh, pixel-perfect designs monthly starting at 399 AED. We deliver worldwide with consistent quality and unlimited revisions.",
   industryFocus: "modern clothing brands worldwide",
-  slug: "cloudfitz-apparels",
+  slug: "cloutfitz-apparels",
   monthlyDesigns: "20-30",
-  startingPrice: "299 AED",
+  startingPrice: "399 AED",
   countriesServed: "50+",
+  phone: "03244646260",
 };
 
 // ==========================================
@@ -27,12 +28,12 @@ export const HERO = {
   badge: "Global Apparel Design Brand",
   mainHeading: "Premium Clothing Design for Modern Brands",
   description:
-    "CloudFitz Apparels delivers premium T-shirt, hoodie, and sweater designs for modern clothing brands worldwide. Get 20-30 fresh designs monthly, starting at just 299 AED. We turn your vision into pixel-perfect apparel designs built for real collections.",
+    "CLOUTFITZ Apparels delivers premium T-shirt, hoodie, and sweater designs for modern clothing brands worldwide. Get 20-30 fresh designs monthly, starting at just 399 AED. We turn your vision into pixel-perfect apparel designs built for real collections.",
   cta1: "Start your project",
   cta2: "View our work",
   stats: [
     { value: "20-30", label: "Designs monthly" },
-    { value: "299 AED+", label: "Starting price" },
+    { value: "399 AED+", label: "Starting price" },
     { value: "50+", label: "Countries served" },
   ],
   clients: [
@@ -50,40 +51,40 @@ export const HERO = {
 // SERVICES SECTION
 // ==========================================
 export const SERVICES = {
-  badge: "Monthly Design Packages",
-  heading: "Everything your apparel brand needs, delivered monthly",
+  badge: "Complete Design Suite",
+  heading: "Full brand identity and apparel design solutions",
   items: [
     {
-      title: "T-Shirt Design",
-      text: "4-6 custom t-shirt graphics per month. Ready for print, merchandise and e-commerce.",
+      title: "Logo & Brand Identity",
+      text: "Strong, memorable logos with complete brand guidelines. Color palettes, typography, and full identity systems for lasting impact.",
     },
     {
-      title: "Hoodie & Sweater",
-      text: "3-4 premium hoodie and sweater designs monthly. Perfect for seasonal collections.",
+      title: "Apparel Graphics",
+      text: "T-shirts, hoodies, sweaters, and streetwear designs. Bold graphics ready for print, embroidery, and screen printing.",
     },
     {
-      title: "Social Posts",
-      text: "8-10 Instagram-ready social media designs per month for your apparel launches.",
+      title: "Product Mockups",
+      text: "Professional mockups on hoodies, T-shirts, caps, and packaging. See your designs come to life before production.",
     },
     {
-      title: "Logo & Branding",
-      text: "Brand identity refresh and logo variations included with every package.",
+      title: "Packaging Design",
+      text: "Custom packaging, poly bags, and box designs. Complete unboxing experience that elevates your brand.",
     },
     {
-      title: "Design Variations",
-      text: "Multiple color options and alternate designs for each concept you love.",
+      title: "Social Media Content",
+      text: "8-10 Instagram-ready designs monthly. Product launches, promotions, and brand storytelling content.",
     },
     {
-      title: "Brand Consistency",
-      text: "All designs follow your brand guidelines. Pixel-perfect, print-ready quality.",
+      title: "Print-Ready Files",
+      text: "All files in multiple formats: PNG, PSD, AI, and vector. Ready for manufacturing, embroidery, and screen printing.",
     },
     {
-      title: "Unlimited Revisions",
-      text: "Not happy? We revise until you're satisfied. No limits, no extra charges.",
+      title: "Brand Guidelines",
+      text: "Complete brand documentation. Usage standards, color codes, typography, and design consistency rules.",
     },
     {
-      title: "Worldwide Support",
-      text: "Fast delivery across all timezones. Supporting apparel brands in 50+ countries.",
+      title: "Monthly Subscriptions",
+      text: "20-30 fresh designs every month. Logo variations, graphics, mockups, and social content all included.",
     },
   ],
 };
@@ -123,7 +124,7 @@ export const PROCESS = {
 // ==========================================
 export const TESTIMONIALS = {
   badge: "Loved by apparel brands",
-  heading: "Global brands trust CloudFitz for consistent monthly designs",
+  heading: "Global brands trust CLOUTFITZ for consistent monthly designs",
   items: [
     {
       quote: "We get 25 fresh designs every month. The quality is consistent, pricing is fair, and the team is always responsive. Best decision for our brand.",
@@ -132,13 +133,13 @@ export const TESTIMONIALS = {
       image: undefined,
     },
     {
-      quote: "Starting at 299 AED for 20+ designs monthly is incredible value. Our social media has never looked better. Unlimited revisions saved us so much time.",
+      quote: "Starting at 399 AED for 20+ designs monthly is incredible value. Our social media has never looked better. Unlimited revisions saved us so much time.",
       author: "Hassan Al-Mansouri",
       role: "Founder, Urban Streetwear",
       image: undefined,
     },
     {
-      quote: "We've worked with CloudFitz for 18 months across 6 countries. They deliver on time, every time. Professional, creative, and they understand apparel.",
+      quote: "We've worked with CLOUTFITZ for 18 months across 6 countries. They deliver on time, every time. Professional, creative, and they understand apparel.",
       author: "Priya Kapoor",
       role: "Design Lead, Fashion House India",
       image: undefined,
@@ -150,20 +151,20 @@ export const TESTIMONIALS = {
 // WORK SECTION
 // ==========================================
 export const WORK = {
-  badge: "Monthly Design Portfolio",
-  heading: "See what 20-30 fresh designs look like every month",
+  badge: "Design Portfolio",
+  heading: "Complete design work across all our services",
   description:
-    "Browse our latest monthly deliveries. Each design is custom-created for apparel brands, print-ready, and available in unlimited revisions.",
+    "Browse our full portfolio of design work. From logos and brand identities to apparel graphics, mockups, packaging, and social media content — this is what we deliver for brands like yours.",
 };
 
 // ==========================================
 // FOOTER SECTION
 // ==========================================
 export const FOOTER = {
-  cta: "Ready for 20-30 fresh designs every month? Start at 299 AED.",
+  cta: "Ready for 20-30 fresh designs every month? Start at 399 AED.",
   tagline:
-    "CloudFitz delivers premium apparel designs to 50+ countries. T-shirts, hoodies, sweaters, logos and brand identity — all included in your monthly package.",
-  copyright: `© {year} CloudFitz Apparels. All rights reserved.`,
+    "CLOUTFITZ delivers premium apparel designs to 50+ countries. T-shirts, hoodies, sweaters, logos and brand identity — all included in your monthly package.",
+  copyright: `© {year} CLOUTFITZ Apparels. All rights reserved.`,
   credit: "Premium apparel designs, delivered monthly worldwide.",
 };
 
@@ -171,13 +172,13 @@ export const FOOTER = {
 // META TAGS (SEO)
 // ==========================================
 export const META = {
-  title: "CloudFitz — 20-30 Premium Apparel Designs Monthly | Starting 299 AED",
+  title: "CLOUTFITZ — 20-30 Premium Apparel Designs Monthly | Starting 399 AED",
   description:
-    "Get 20-30 fresh apparel designs monthly starting at 299 AED. T-shirts, hoodies, sweaters and branding for clothing brands worldwide. Unlimited revisions included.",
-  author: "CloudFitz Apparels",
-  ogTitle: "CloudFitz — Monthly Apparel Design Subscription",
+    "Get 20-30 fresh apparel designs monthly starting at 399 AED. T-shirts, hoodies, sweaters and branding for clothing brands worldwide. Unlimited revisions included.",
+  author: "CLOUTFITZ Apparels",
+  ogTitle: "CLOUTFITZ — Monthly Apparel Design Subscription",
   ogDescription:
-    "Premium apparel design service: 20-30 designs monthly, starting at 299 AED. Worldwide delivery, unlimited revisions, pixel-perfect quality.",
+    "Premium apparel design service: 20-30 designs monthly, starting at 399 AED. Worldwide delivery, unlimited revisions, pixel-perfect quality.",
 };
 
 // ==========================================

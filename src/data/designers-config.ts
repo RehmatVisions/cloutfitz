@@ -5,12 +5,6 @@
  * Naya designer add karna? Sirf yaha add karo!
  */
 
-import ahsanImage from "@/assets/designer-ahsan-ali.svg";
-import ayeshaImage from "@/assets/designer-ayesha-rehman.svg";
-import daniyalImage from "@/assets/designer-daniyal-karim.svg";
-import mariamImage from "@/assets/designer-mariam-youssef.svg";
-import hassanImage from "@/assets/designer-hassan-tariq.svg";
-
 export type Designer = {
   name: string;
   role: string;
@@ -29,35 +23,30 @@ export type Designer = {
  */
 export const designers: Designer[] = [
   {
+    name: "Rehmat Ali",
+    role: "Founder & Creative Director",
+    tag: "Premium Lead Designer",
+    featured: true,
+  },
+  {
     name: "Ahsan Ali",
     role: "Regional Design Specialist",
     tag: "UAE · Pakistan · GCC",
-    image: ahsanImage,
-    featured: true, // First/featured designer
   },
   {
     name: "Ayesha Rehman",
     role: "Brand & Identity Lead",
     tag: "Logos · Guidelines",
-    image: ayeshaImage,
   },
   {
     name: "Daniyal Karim",
     role: "Print & Menu Designer",
     tag: "Menus · Flyers",
-    image: daniyalImage,
   },
   {
     name: "Mariam Youssef",
     role: "Social Content Designer",
     tag: "Posts · Reels",
-    image: mariamImage,
-  },
-  {
-    name: "Hassan Tariq",
-    role: "Web & UI Designer",
-    tag: "Websites · Ordering",
-    image: hassanImage,
   },
 ];
 

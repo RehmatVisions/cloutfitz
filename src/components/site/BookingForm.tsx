@@ -476,7 +476,7 @@ export function BookingForm() {
                   className="w-4 h-4 mt-1 text-red-500 rounded cursor-pointer"
                 />
                 <span className="text-xs text-black/70">
-                  I agree to CloudFitz Apparels' terms and conditions. I
+                  I agree to CLOUTFITZ Apparels' terms and conditions. I
                   understand that someone from our team will reach out within 24
                   hours to discuss my project.
                 </span>
